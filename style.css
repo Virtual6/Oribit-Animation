@@ -1,0 +1,617 @@
+/*  Style CSS */
+
+/*
+    Box Sizing Lecture
+*/
+#box {
+    width: 100px;
+    height: 100px;
+    background: red;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-border-radius : 40px;
+    border-radius: 40px;
+}
+
+/*
+    CSS3 Colors Lecture
+*/
+
+body#colors {
+    background: rgba(25,52,84,0.8);
+    color: white;
+    color: #554541;
+}
+
+#colors #container {
+    width: 600px;
+    height: 100px;
+    padding: 50px;
+    box-sizing: border-box;
+    background: rgba(125,250,50,0.1);
+    margin: 0 auto;
+
+}
+
+#colors #gradient {
+    width: 400px;
+    height: 300px;
+    background: linear-gradient(to right bottom, pink 30%, blue 45%, rgba(41,45,110,0.5), yellow 50%, olive, white 60%, red 40%,green 70%);
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    color: black;
+    line-height: 300px;
+    padding: 0 75px;
+    box-sizing: border-box;
+    margin: 100px auto;
+}
+
+#colors #radial-gradient {
+    width: 400px;
+    height: 300px;
+    background: radial-gradient(pink 10%, blue, rgba(41,45,110,0.5), yellow, olive, white, red 40%,green);
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    color: black;
+    line-height: 300px;
+    padding: 0 75px;
+    box-sizing: border-box;
+    margin: 100px auto;
+}
+
+
+
+/*****
+    Shadows.css
+             *****/
+
+#shadows #container {
+    background: rgba(101,215,103,0.6);
+    width: 600px;
+    margin: 40px auto;
+    padding:  20px;
+    box-sizing: border-box;
+    box-shadow: -20px 20px 30px yellow, -30px 40px 20px 10px red;
+}
+
+#shadows h1 {
+    color: rgba(190,260,60,0.9);
+    text-shadow: 3px 3px 10px blue, 2px 2px 20px green;
+}
+
+
+/*****
+    columns.css
+             *****/
+
+#columns #container #three-column {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+
+    column-rule-style: groove;
+    column-fill: auto;
+    column-rule-color: aqua;
+    column-rule-width: 9px;
+}
+
+/******
+    animation.css
+              *******/
+
+#animation #box {
+    background: rgba(25,52,184,0.9);
+    border-radius: 90px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+span {
+    background: linear-gradient(to left, yellow, lightblue);
+}
+
+@keyframes box{
+    from { background-color: rgba(25,52,184,0.9); top: 0; left: 0;
+           border-radius: 20px;}
+    to   { background-color: green;
+           border-radius: 200px;
+           top: 100px;
+           left: 100px;
+         }
+}
+
+@keyframes span {
+    from{ font-size: 28px; }
+    to  { background: none;}
+}
+
+#animation #box {
+    position: relative;
+    animation-name: box;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 4s;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+
+    animation: box 7s ease-in-out 3 alternate;
+
+}
+
+#animation #box span {
+    animation-name: span;
+    animation-duration: 7s;
+    animation-iteration-count: 6;
+    animation-direction: alternate;
+}
+
+#animation #box9 {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    top: 100px;
+    left: 100px;
+    background: red;
+    border-radius: 60px;
+    transition: transform 5s;
+}
+
+#animation #box9:hover {
+    background: blue;
+    transform: rotate(360deg);
+}
+
+
+/******
+    rotate.css
+              *******/
+#rotation #rot1 {
+    position: relative;
+    top: 485px;
+    left: 250px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    transform: rotate(270deg);
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+#rotation #rot2 {
+    position: relative;
+    left: 300px;
+    width: 100px;
+    height: 100px;
+    background: rgba(45,100,200,0.9);
+    border-radius: 44px;
+    animation: rotate 2s ease-out infinite alternate;
+    transform: rotate(180deg);
+}
+
+@keyframes rotate {
+    from { top: 186px; transform: rotate(0deg);    background: blue;}
+    to   { top: -90px; transform: rotate(9900deg); background: green;}
+}
+
+
+/******
+    buttons.css
+              *******/
+.button {
+    display: inline-block;
+    background: #fc3;
+    background: linear-gradient(#fc3, #f91);
+    text-decoration: none;
+    color: brown;
+    border: solid 1px #999;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.button:hover {
+    background: #fc6;
+    color: green;
+    background: linear-gradient(to top, #fc3, #f91);
+    border-color: #888;
+    animation: buttonAnimation 1s;
+    animation-fill-mode: forwards;
+}
+
+.button:active {
+    position: relative;
+    top: 2px;
+}
+
+@keyframes buttonAnimation {
+    from { padding: 10px 20px;}
+    to   { padding: 15px 25px;}
+}
+
+
+/******
+    dropball.css
+              *******/
+
+#drop-ball { width: 640px;
+position: relative;}
+
+.balls {
+    width: 100px;
+    height: 100px;
+    background: red;
+
+}
+
+#box10 { position: absolute; top: 60px;  left:  0; animation: lefttoright 1s   infinite alternate;}
+#box12 { position: absolute; top: 180px; left:  0; animation: lefttoright 2.1s infinite alternate;}
+#box14 { position: absolute; top: 300px; left:  0; animation: lefttoright 0.9s infinite alternate;}
+#box16 { position: absolute; top: 420px; left:  0; animation: lefttoright 1.5s infinite alternate;}
+#box18 { position: absolute; top: 540px; left:  0; animation: lefttoright 1.2s infinite alternate;}
+#box20 { position: absolute; top: 660px; left:  0; animation: lefttoright 1.9s infinite alternate;}
+#box11 { position: absolute; top: 60px;  right: 0; animation: lefttoright 2s   infinite alternate;}
+#box13 { position: absolute; top: 180px; right: 0; animation: lefttoright 1.9s infinite alternate;}
+#box15 { position: absolute; top: 300px; right: 0; animation: lefttoright 1.1s infinite alternate;}
+#box17 { position: absolute; top: 420px; right: 0; animation: lefttoright 2.2s infinite alternate;}
+#box19 { position: absolute; top: 540px; right: 0; animation: lefttoright 2.4s infinite alternate;}
+#box21 { position: absolute; top: 660px; right: 0; animation: lefttoright 2s   infinite alternate;}
+
+#luckyball {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background: blue;
+    top: -60px;
+    left: 292px;
+    border-radius: 45px;
+    animation: drops 2s ease-in  infinite alternate;
+}
+
+@keyframes lefttoright {
+    from{width: 100px; height: 100px;}
+    to  {width: 290px; height: 100px;}
+}
+
+@keyframes drops {
+    from{ top: -60px; left: 292px;}
+    to  { top: 645px; left: 292px;}
+}
+
+
+
+/******
+ ******
+    orbit.css
+              *******
+              *******/
+
+@-webkit-keyframes starsPulse {
+    from { opacity: 1;}
+    to   { opacity: 0.2;}
+}
+
+@-moz-keyframes starsPulse {
+    from { opacity: 1;}
+    to   { opacity: 0.2;}
+}
+
+@-o-keyframes starsPulse {
+    from { opacity: 1;}
+    to   { opacity: 0.2;}
+}
+
+@keyframes starsPulse {
+    from { opacity: 1;}
+    to   { opacity: 0.2;}
+}
+
+@-webkit-keyframes sunFire {
+    from {
+        -webkit-box-shadow: 0 0 50px 5px #f5c91a;
+        -moz-box-shadow: 0 0 50px 5px #f5c91a;
+        -o-box-shadow: 0 0 50px 5px #f5c91a;
+        box-shadow: 0 0 50px 5px #f5c91a;
+    }
+    to   {
+        -webkit-box-shadow: 0 0 120px 10px #f5c91a;
+        -moz-box-shadow: 0 0 120px 10px #f5c91a;
+        -o-box-shadow: 0 0 120px 10px #f5c91a;
+        box-shadow: 0 0 120px 10px #f5c91a;
+    }
+}
+
+@-moz-keyframes sunFire {
+    from {
+        -webkit-box-shadow: 0 0 50px 5px #f5c91a;
+        -moz-box-shadow: 0 0 50px 5px #f5c91a;
+        -o-box-shadow: 0 0 50px 5px #f5c91a;
+        box-shadow: 0 0 50px 5px #f5c91a;
+    }
+    to   {
+        -webkit-box-shadow: 0 0 120px 10px #f5c91a;
+        -moz-box-shadow: 0 0 120px 10px #f5c91a;
+        -o-box-shadow: 0 0 120px 10px #f5c91a;
+        box-shadow: 0 0 120px 10px #f5c91a;
+    }
+}
+
+@-o-keyframes sunFire {
+    from {
+        -webkit-box-shadow: 0 0 50px 5px #f5c91a;
+        -moz-box-shadow: 0 0 50px 5px #f5c91a;
+        -o-box-shadow: 0 0 50px 5px #f5c91a;
+        box-shadow: 0 0 50px 5px #f5c91a;
+    }
+    to   {
+        -webkit-box-shadow: 0 0 120px 10px #f5c91a;
+        -moz-box-shadow: 0 0 120px 10px #f5c91a;
+        -o-box-shadow: 0 0 120px 10px #f5c91a;
+        box-shadow: 0 0 120px 10px #f5c91a;
+    }
+}
+
+@keyframes sunFire {
+    from {
+        -webkit-box-shadow: 0 0 50px 5px #f5c91a;
+        -moz-box-shadow: 0 0 50px 5px #f5c91a;
+        -o-box-shadow: 0 0 50px 5px #f5c91a;
+        box-shadow: 0 0 50px 5px #f5c91a;
+    }
+    to   {
+        -webkit-box-shadow: 0 0 120px 10px #f5c91a;
+        -moz-box-shadow: 0 0 120px 10px #f5c91a;
+        -o-box-shadow: 0 0 120px 10px #f5c91a;
+        box-shadow: 0 0 120px 10px #f5c91a;
+    }
+}
+
+@-webkit-keyframes rotate {
+    from{ transform: rotate(0); }
+    to  { transform: rotate(360deg); }
+}
+
+@-moz-keyframes rotate {
+    from{ transform: rotate(0); }
+    to  { transform: rotate(360deg); }
+}
+
+@-o-keyframes rotate {
+    from{ transform: rotate(0); }
+    to  { transform: rotate(360deg); }
+}
+
+
+@keyframes rotate {
+    from{ transform: rotate(0); }
+    to  { transform: rotate(360deg); }
+}
+
+html, body  {
+    width: 100%;
+    height: 100%;
+}
+
+#universe {
+    position: relative;
+    background: black;
+    background: -webkit-radial-gradient(#555, #000);
+    background: -moz-radial-gradient(#555, #000);
+    background: -o-radial-gradient(#555, #000);
+    background: radial-gradient(#555, #000);
+}
+
+#stars {
+    background: url('star.png');
+    width: 100%;
+    height: 100%;
+
+    -webkit-animation: starsPulse 4s infinite alternate;
+    -moz-animation: starsPulse 4s infinite alternate;
+    -o-animation: starsPulse 4s infinite alternate;
+    animation: starsPulse 3s infinite alternate;
+}
+
+
+#sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    background: orange;
+    background: -webkit-radial-gradient(#f5c313, #ec7e08);
+    background: -moz-radial-gradient(#f5c313, #ec7e08);
+    background: -o-radial-gradient(#f5c313, #ec7e08);
+    background: radial-gradient(#f5c313, #ec7e08);
+    -webkit-box-shadow: 0 0 50px 5px #f5c91a;
+    -moz-box-shadow: 0 0 50px 5px #f5c91a;
+    -o-box-shadow: 0 0 50px 5px #f5c91a;
+    box-shadow: 0 0 50px 6px #f5c91a;
+
+    -webkit-animation: sunFire 3s linear infinite alternate;
+    -moz-animation: sunFire 3s linear infinite alternate;
+    -o-animation: sunFire 3s linear infinite alternate;
+    animation: sunFire 3s linear infinite alternate;
+}
+
+
+#earthOrbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 600px;
+    margin-top: -300px;
+    margin-left: -350px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+
+    -webkit-animation: rotate 30s linear infinite;
+    -moz-animation: rotate 30s linear infinite;
+    -o-animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite;
+}
+
+#earth {
+    position: absolute;
+    top: 35%;
+    left: 1%;
+
+    -webkit-animation: rotate 60s linear infinite;
+    -moz-animation: rotate 60s linear infinite;
+    -o-animation: rotate 60s linear infinite;
+    animation: rotate 60s linear infinite;
+}
+
+#moon {
+    height: 18px;
+    width: 18px;
+    background: -webkit-radial-gradient(#ddd, #888);
+    background: -moz-radial-gradient(#ddd, #888);
+    background: -o-radial-gradient(#ddd, #888);
+    background: radial-gradient(#ddd, #777, #222);
+
+     border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -o-border-radius: 100%;
+
+    -webkit-animation: rotate 15s linear infinite;
+    -moz-animation: rotate 15s linear infinite;
+    -o-animation: rotate 15s linear infinite;
+    animation: rotate 15s linear infinite;
+}
+
+
+#moon-orbit {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    margin-top: 200px;
+    margin-left: -2px;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -o-border-radius: 100%;
+
+    -webkit-animation: rotate 9s linear infinite;
+    -moz-animation: rotate 9s linear infinite;
+    -o-animation: rotate 9s linear infinite;
+    animation: rotate 9s linear infinite;
+}
+
+
+#mercury {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 0%;
+    margin-top: -20px;
+
+    -webkit-animation: rotate 30s linear infinite;
+    -moz-animation: rotate 30s linear infinite;
+    -o-animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite;
+}
+
+#mercury-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -200px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+
+    -webkit-animation: rotate 15s linear infinite;
+    -moz-animation: rotate 15s linear infinite;
+    -o-animation: rotate 15s linear infinite;
+    animation: rotate 15s linear infinite;
+}
+
+
+#venus {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0%;
+    left: 0%;
+
+    -webkit-animation: rotate 30s linear infinite;
+    -moz-animation: rotate 30s linear infinite;
+    -o-animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite;
+}
+
+#venus-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -200px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+
+    -webkit-animation: rotate 22s linear infinite;
+    -moz-animation: rotate 22s linear infinite;
+    -o-animation: rotate 22s linear infinite;
+    animation: rotate 22s linear infinite;
+}
+
+#mars {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0%;
+    left: 0%;
+
+    -webkit-animation: rotate 30s linear infinite;
+    -moz-animation: rotate 30s linear infinite;
+    -o-animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite;
+}
+
+#mars-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 860px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -430px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;    
+
+    -webkit-animation: rotate 40s linear infinite;
+    -moz-animation: rotate 40s linear infinite;
+    -o-animation: rotate 40s linear infinite;
+    animation: rotate 40s linear infinite;
+}
